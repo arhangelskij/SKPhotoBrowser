@@ -53,8 +53,9 @@ class SKCloseButton: SKButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup(imageName)
-        showFrame = CGRect(x: margin, y: buttonTopOffset, width: size.width, height: size.height)
-        hideFrame = CGRect(x: margin, y: -20, width: size.width, height: size.height)
+        let x = UIScreen.main.bounds.width - size.height - margin
+        showFrame = CGRect(x: x, y: buttonTopOffset, width: size.width, height: size.height)
+        hideFrame = CGRect(x: x, y: -20, width: size.width, height: size.height)
     }
 }
 
