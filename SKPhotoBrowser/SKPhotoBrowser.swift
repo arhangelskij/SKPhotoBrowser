@@ -599,7 +599,20 @@ private extension SKPhotoBrowser {
                 
                 if SKPhotoBrowserOptions.displayCloseButton {
                     self.closeButton.alpha = alpha
-                    self.closeButton.frame = hidden ? self.closeButton.hideFrame : self.closeButton.showFrame
+                    ///////////////////////////////////////
+                    //FIX: our fix for a landscape mode
+                    
+                    var showFrame = self.closeButton.showFrame
+                    
+                    let x = UIScreen.main.bounds.width - self.closeButton.size.height - 5
+                    showFrame?.origin.x = x
+                    
+                    var hideFrame = showFrame
+                    hideFrame?.origin.y = -20
+                    
+                    self.closeButton.frame = (hidden ? hideFrame : showFrame)!
+                    
+                    //////////////////////////////////////
                 }
                 if SKPhotoBrowserOptions.displayDeleteButton {
                     self.deleteButton.alpha = alpha
