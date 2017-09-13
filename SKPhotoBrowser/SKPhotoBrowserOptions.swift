@@ -48,7 +48,8 @@ public struct SKPhotoBrowserOptions {
     /// Offset from top and from nearest screen edge of close button and delete button.
     ///
     /// - Default: 5
-    public static var closeAndDeleteButtonPadding: CGFloat = 5
+    public static var closeAndDeleteButtonPaddingX: CGFloat = 5
+    public static var closeAndDeleteButtonPaddingY: CGFloat = 5
 }
 
 public struct SKCaptionOptions {

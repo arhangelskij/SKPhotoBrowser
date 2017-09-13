@@ -147,7 +147,8 @@ That how you can customize close and delete buttons
 ```
 SKPhotoBrowserOptions.displayDeleteButton = true                           // delete button will be shown
 SKPhotoBrowserOptions.swapCloseAndDeleteButtons = true                     // now close button located on right side of screen and delete button is on left side
-SKPhotoBrowserOptions.closeAndDeleteButtonPadding = 20                     // set offset from top and from nearest screen edge of close button and delete button
+SKPhotoBrowserOptions.closeAndDeleteButtonPaddingX = 20
+SKPhotoBrowserOptions.closeAndDeleteButtonPaddingY = 20                    // set offset from top and from nearest screen edge of close button and delete button
 ```
 
 #### Custom Cache From Web URL

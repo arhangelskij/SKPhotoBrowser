@@ -1,5 +1,10 @@
 # Change Log
 
+## 4.1.2
+
+#### Updated
+- Change closeAndDeleteButtonPadding to closeAndDeleteButtonPaddingX and closeAndDeleteButtonPaddingY
+
 ## 4.1.1
 
 #### Updated
