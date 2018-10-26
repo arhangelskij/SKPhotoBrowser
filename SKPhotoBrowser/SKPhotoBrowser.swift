@@ -413,20 +413,29 @@ internal extension SKPhotoBrowser {
 // MARK: - Internal Function For Frame Calc
 
 internal extension SKPhotoBrowser {
+  
     func frameForToolbarAtOrientation() -> CGRect {
         let currentOrientation = UIApplication.shared.statusBarOrientation
         var height: CGFloat = navigationController?.navigationBar.frame.size.height ?? 44
+        
         if UIInterfaceOrientationIsLandscape(currentOrientation) {
-            height = 32
+            height = 44
         }
-        return CGRect(x: 0, y: view.bounds.size.height - height, width: view.bounds.size.width, height: height)
+        
+        var bottomSafeArea: CGFloat = 0
+        
+        if #available(iOS 11.0, *) {
+            bottomSafeArea = view.safeAreaInsets.bottom
+        }
+        
+        return CGRect(x: 0, y: view.bounds.size.height - height - bottomSafeArea, width: view.bounds.size.width, height: height)
     }
     
     func frameForToolbarHideAtOrientation() -> CGRect {
         let currentOrientation = UIApplication.shared.statusBarOrientation
         var height: CGFloat = navigationController?.navigationBar.frame.size.height ?? 44
         if UIInterfaceOrientationIsLandscape(currentOrientation) {
-            height = 32
+            height = 44
         }
         return CGRect(x: 0, y: view.bounds.size.height + height, width: view.bounds.size.width, height: height)
     }
